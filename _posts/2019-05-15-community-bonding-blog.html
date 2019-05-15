@@ -1,0 +1,39 @@
+---
+layout: post
+title:  "GSoC-19 with Weecology"
+subtitle: "Google Summer of Code 2019 - Weecology"
+date:   2019-05-15 11:45:13 +0530
+background: '/img/posts/06.jpg'
+---
+<p>The mail on 6th May 2019 read “Congratulations, your proposal with NumFocus has been accepted” and all the hard work since the last two months was quite worth it!</p>
+
+<h2 class="section-heading">What exactly is GSoC?</h2>
+
+<p><blockquote class="blockquote"><a href="https://summerofcode.withgoogle.com/about/">Google Summer of Code</a> is a global program sponsored by Google Inc focused on introducing students to open source software development for the open source organizations. Students work on a 3-month development project with an open source organization under some mentors. NumFocus is an umbrella open source organization which promotes world-class, innovative, open source scientific software. I would be working with the organization <a href="https://github.com/weecology/">Weecology</a>, which is a member of NumFocus.</blockquote></p>
+
+<p>Or let’s just say this picture says it all …</p>
+
+<img class="img-fluid" src="/img/posts/07.png" alt="GSoC Image">
+<span class="caption text-muted">GSoC About Page Image</span>
+
+<h2 class="section-heading">What’s next?</h2>
+
+<p>Getting selected in GSoC is the first step towards a long journey, next is to work my way up to the end of it. During the GSoC period, I will be releasing a series of blog posts describing my progress and experience with Weecology. This blog post is the first entry in that series.</p>
+
+<h2 class="section-heading">GSoC 19 Project</h2>
+
+<p>Weecology has a package manager for data named Data Retriever. The Data Retriever is a package manager for data which automatically finds, downloads and pre-processes publicly available datasets and stores these datasets in a ready-to-analyze state. The Retriever project, however, suffers from some drawbacks which require attention:</p>
+
+<ul>
+	<li>Currently the core software ships with json script metadata. However, this metadata must be shifted in a separate project location to help with organization, maintenance, and testing.</li>
+	<li>Retriever currently downloads all the json scripts at once during installation. This would become increasingly inefficient as the number of the scripts in the upstream repository increase. We must remove this step and instead download the scripts from the upstream repository only when specifically needed.</li>
+	<li>Presently, Retriever does not check for newer versions of scripts upstream and continues to use the scripts present in the home directory. These scripts may become quite outdated as compared to the newer scripts. Thus, we must check whether a newer version of a script is available upstream, when needed and accordingly download it.</li>
+</ul>
+
+<p>Here is a <a href="assets/Data Retriever GSoC Proposal.pdf">link</a> to my GSoC proposal.</p>
+
+<h2 class="section-heading">Progress</h2>
+
+<p>The first three weeks of the program as Google calls it the Community Bonding Period is the period where the student gets to know the Organization and mentors. I thus intend to discuss the goals and the implementation of the project with the mentors Henry and Andrew during this period. I would also try to lay down a detailed plan and familiarise myself with the project.</p>
+
+<p>In the next phase (the first coding period), I would be working on the first task of the project, i.e. shipping Retriever scripts to a separate location. Stay Tuned!</p> 
