@@ -1,0 +1,36 @@
+---
+layout: post
+title:  "GSoC-19: Retriever changes"
+subtitle: "Google Summer of Code 2019 - Weecology"
+date:   2019-06-24 11:45:13 +0530
+background: '/img/posts/06.jpg'
+---
+
+<p>Hello,</p>
+
+<p>The 3rd and 4th weeks of the coding period are almost over and it has been a fun time working on the project. During the first two weeks, I mainly worked on moving the scripts and their adding/editing functionalities from the <code>retriever</code> to the <code>recipes</code> repository. I had opened 4 pull requests for the above tasks, two in each repository, and all of them got merged. During these two weeks, I worked on the following tasks:</p>
+
+<ul>
+	<li>Making appropriate code changes in <code>retriever</code> due to moving scripts to the <code>recipes</code> repository. The docs were also updated as the script editing or adding functionalities have been moved to the recipes repository. The PR for this task is currently in review stage.</li>
+	<li>Adding CLI interface to the <code>retriever-recipes</code> repository for adding, deleting and editing scripts. The PR is in review stage.</li>
+	<li>Adding a pre-commit hook for updating the script versions prior to making a commit. The PR is again in review and testing stage and is expected to be merged soon.</li>
+	<li>Adding a test script to check the installation of modified or newly added scripts. Travis CI is also integrated to run remote tests when pushing the code. A Dockerfile has been written to facilitate the running of Travis tests in an isolated environment.</li>
+</ul>
+
+<p>Their was some discussion needed regarding the mvoing of scripts. Andrew, one of the mentors was of the view that some scripts should be present in retriever to give the users an idea of the json scripts. Thus, keeping this in mind, we came to the decision that we would assign five scripts (the most stable and the oldest) as the "retriever legacy scripts", keeping them in retriever. The rest of the scripts would be moved to the recipes repository.</p>
+
+<p>To facilitate the use of recipes as a command-line utility, the user would simply clone the repository and install it. The steps would be:</p>
+
+<code>
+	git clone https://www.github.com/weecology/retriever-recipes.git<br>
+	cd retriever-recipes<br>
+	python setup.py install
+</code> 
+
+<p>The usage of the CLI interface would be:</p>
+
+<ul>
+	<li>Add a new JSON script: <code>retriever-recipes new_json</code></li>
+	<li>Delete an existing JSON script: <code>retriever-recipes delete_json dataset</code></li>
+	<li>Edit an existing JSON script: <code>retriever-recipes edit_json dataset</code></li>
+</ul>
