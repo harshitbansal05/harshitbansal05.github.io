@@ -1,0 +1,15 @@
+---
+layout: post
+title:  "GSoC-19: Download scripts only when needed"
+subtitle: "Google Summer of Code 2019 - Weecology"
+date:   2019-07-08 11:45:13 +0530
+background: '/img/posts/06.jpg'
+---
+
+<p>Hello,</p>
+
+<p>The 5th and 6th weeks of the coding period are almost over and it has been a fun time working on the project. During the first month, I initally worked on moving the scripts and their adding/editing functionalities from the <code>retriever</code> to the <code>recipes</code> repository. Later I added a CLI interface to the <code>retriever-recipes</code> repository for adding, deleting and editing scripts. I also wrote a test script to check the installation of modified or newly added scripts. Travis CI was integrated to run remote tests in a docker environment when pushing the code.</p>
+
+<p>Currently, Retriever downloads all the json scripts at once during installation, or whenever the scripts folder in the home directory (~/.retriever directory) is empty. The goal of the second phase of the project was to instead download the scripts only when specifically needed. I mainly stuck with the proposal for this task and added two utility functions namely, <code>get_script_upstream</code>, and <code>get_dataset_names_upstream</code>. The former method is called whenever a script is not available locally. The latter is used for printing the results of <code>retriever ls</code>. It also supports searching of the upstream scripts for keyword and license query parameters, using Github's serach api. Also, necessary code changes were made throughout the project to support this feature.</p>
+
+<p>I have opened a <a href="https://github.com/weecology/retriever/pull/1358">pull request</a> for this task, which is currently in review and testing phase. Now, I would be working on the task of always using the latest version of scripts, i.e. prompting the user if a newer version of script is available upstream. Stay tuned!</p>
