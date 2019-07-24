@@ -1,0 +1,19 @@
+---
+layout: post
+title:  "GSoC-19: Install datasets using the latest version of scripts"
+subtitle: "Google Summer of Code 2019 - Weecology"
+date:   2019-07-23 11:45:13 +0530
+background: '/img/posts/06.jpg'
+---
+
+<p>Hello,</p>
+
+<p>The second phase of the GSoC period is almost over and with that, majority of the project too.</p>
+
+<p>For the last two weeks, I worked on the task of always attempting to use the latest version of scripts when installing or using a dataset. This was build on the previous task of downloading the scripts only when specifically needed. I stuck with the proposal for this task and added a utility function, namely <code>get_script_version_upstream</code> to fetch the version of a script from the upstream repositories. Also, the functions, <code>name_matches</code> and <code>get_script</code> were modified to prompt the user if a newer version of a script was available.</p>
+
+<p>I have opened a <a href="https://github.com/weecology/retriever/pull/1362">pull request</a> for this task, which is currently in review and testing phase. It is only being delayed due to a minor problem caused by cyclic dependencies. However, the solution has been identified and it is expected to be merged soon.</p>
+
+<p>On the retriever-recipes repository, I had worked on two tasks. One was writing the installation path of the project to <code>~/.retriever/retriever_recipes_path.txt</code> to facilitate <code>retriever</code> in searching for scripts. Other than this, I also wrote a README for the repository. It talks about the edit/create/delete functionalities, offline and online scripts, and has a guide for contributing to start. I opened two PR's for these tasks and both of them got merged.</p>
+
+<p>This pretty much sums up the second phase of the GSoC period. Thanks.</p>
