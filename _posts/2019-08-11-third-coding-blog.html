@@ -1,0 +1,24 @@
+---
+layout: post
+title:  "GSoC-19: Julia and R repositories"
+subtitle: "Google Summer of Code 2019 - Weecology"
+date:   2019-08-11 11:45:13 +0530
+background: '/img/posts/06.jpg'
+---
+
+<p>Hello,</p>
+
+<p>The 9th and 10th weeks of the coding period are almost over, and only two left for the end of GSoC 2019. Here's a glimpse of what I did during the last two weeks.</p>
+
+<p>Last two weeks, mainly went in understanding the codebase of two more Data Retriever repositories: <a href="https://github.com/weecology/Retriever.jl">Retriever.jl</a>, and <a href="https://github.com/ropensci/rdataretriever">rdataretriever</a>.</p>
+
+<p>Retriever.jl is a Julia wrapper for the Data Retriever software. It makes use of the Data Retriever's python package, requiring it to be installed. It has been created using <code>PyCall</code>, hence all the functions are analogous to the functions of the Retriever python module. Since it simply wraps Retriever python functions, no change in the codebase are required to make it compatible with the design changes in Retriever. There would only be some changes in the output similar to that of Python modules. For instance, the function <code>dataset_names()</code> would now return a dictionary with two keys, <code>online</code> and offline, containing the subset of the scripts present on the upstream Retriever repository and the home folder (~/.retriever) respectively. I also opened a <a href="https://github.com/weecology/Retriever.jl/pull/51">pull request</a> for this task, which is currently in review and testing phase.</p>
+
+<p>RDataRetriever is an R interface to the Data Retriever, so that the Retriever's data handling can easily be integrated into R workflows. Similar to the Julia counterpart, it makes use of the Data Retriever's python package, requiring it to be installed. The changes to be made in the code to make it compatible with Retriever are:</p>
+
+<ul>
+	<li>In the function <code>datasets()</code>, <code>​r_data_retriever​$datasets()</code> would return a dictionary with two keys online and offline. Thus, it would be printed accordingly.</li>
+	<li>Similarly, in the function <code>fetch()</code>, datasets would be handled as a dictionary.</li>
+</ul>
+
+<p>Apart from the above, I also opened pull requests for getting things merged into the master branch from the current development. In the last two weeks, I would be working on these PR's to master and perform exhaustive checking for errors in documentation and code.</p>
