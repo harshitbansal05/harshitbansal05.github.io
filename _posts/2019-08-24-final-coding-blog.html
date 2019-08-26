@@ -1,44 +1,50 @@
 ---
 layout: post
 title:  "GSoC-19: Final summary"
-subtitle: "Google Summer of Code 2019 - Weecology"
+subtitle: "Google Summer of Code 2019 - The Data Retriever Weecology"
 date:   2019-08-24 11:45:13 +0530
 background: '/img/posts/06.jpg'
 ---
 
-<p>A brief overview of the work done across the three phases of the project is mentioned below. The blogs may be referred for a detailed explanation.</p>
+<h3>Developing a public data package recipe for retriever:</h3>
+
+<p>The <a href="https://github.com/weecology/retriever">Data Retriever</a> is a package manager for data. Previosuly, the core software shipped with json script metadata. However, there was a need to shift it in a new location to help with maintenance and testing. <a href="https://github.com/weecology/retriever-recipes">retriever-recipes</a> now holds all the scripts previously held by retriever, and also supports adding, editing and deleting of scripts.</p> 
+
+<p>A brief outline of the work done across the three phases of the project is mentioned below.</p>
 
 <ol>
-	<li>The first part of the project mainly comprised of shifting the scripts from the <a href="https://github.com/weecology/retriever">retriever</a> repository to the new <a href="https://github.com/weecology/retriever-recipes">retriever-recipes</a> repository. The other major task was moving the script adding and editing functionalities to the recipes repository. For doing so, necessary changes also needed to be done in the retriever repository.</li>
+	<li>The first part of the project mainly comprised of shifting the scripts from the <a href="https://github.com/weecology/retriever"><u>retriever</u></a> repository to the new <a href="https://github.com/weecology/retriever-recipes"><u>retriever-recipes</u></a> repository. The other major task was moving the script adding and editing functionalities to the recipes repository. For doing so, necessary changes also needed to be done in the retriever repository.</li>
 
 	<li>Previously, Retriever would only look at the local scripts when needed to install or use a dataset. The goal of the second phase of the project was to enable downloading the scripts from upstream if not present locally. Later, I worked on the task of always attempting to use the latest version of scripts when installing or using a dataset.</li>
 
-	<li>In the last phase of the project, I made the necessary changes to the two Retriever wrapper repositories: <a href="https://github.com/weecology/Retriever.jl">Retriever.jl</a> and <a href="https://github.com/weecology/rdataretriever">rdataretriever</a>. Apart from it, I opened pull requests for getting things merged into the master branch from the current development. I also performed exhaustive checking for errors in documentation and code.</li>
+	<li>In the last phase of the project, I made the necessary changes to the two Retriever wrapper repositories: <a href="https://github.com/weecology/Retriever.jl"><u>Retriever.jl</u></a> and <a href="https://github.com/weecology/rdataretriever"><u>rdataretriever</u></a>. Apart from it, I opened pull requests for getting things merged into the master branch from the current development. I also performed exhaustive checking for errors in documentation and code.</li>
 </ol>
 
 <p>During the course of the project, I mainly contributed to two repositories: retriever and retriever-recipes. The list of commits made in the two repositories:</p>
 
 <ul>
-	<li>retriever: https://github.com/weecology/retriever/commits?author=harshitbansal05</li>
-	<li>retriever-recipes: https://github.com/weecology/retriever-recipes/commits?author=harshitbansal05</li>
+	<li><a href="https://github.com/weecology/retriever/commits?author=harshitbansal05"><u>Commits in retriever</u></a></li>
+	<li><a href="https://github.com/weecology/retriever-recipes/commits?author=harshitbansal05"><u>Commits in retriever-recipes</u></a></li>
 </ul>
 
 <p>The list of major pull requests made for the project:</p>
 
 <ul>
-	<li><a href="https://github.com/weecology/retriever/pull/1381">GSoC: Add provenance and recipes</a></li>
-	<li><a href="https://github.com/weecology/retriever-recipes/pull/26">Merge retriever-recipes-dev into master</a></li>
-	<li><a href="https://github.com/ropensci/rdataretriever/pull/193">Make appropriate changes for recipes features</a></li>
-	<li><a href="https://github.com/weecology/Retriever.jl/pull/51">Make changes corresponding to retriever</a></li>
+	<a href="https://github.com/weecology/retriever/pull/1381"><li><u>GSoC: Add provenance and recipes</u></li></a>
+	<li><a href="https://github.com/weecology/retriever-recipes/pull/26"><u>Merge retriever-recipes-dev into master</u></a></li>
+	<li><a href="https://github.com/ropensci/rdataretriever/pull/193"><u>Make appropriate changes for recipes features</u></a></li>
+	<li><a href="https://github.com/weecology/Retriever.jl/pull/51"><u>Make changes corresponding to retriever</u></a></li>
 </ul>
 
 <p>I also wrote a number of blogs writing about the work done, on a bi-weekly basis. The list of the blogs written for the GSoC project so far:</p>
 
 <ul>
-	<li><a href="https://harshitbansal05.github.io/2019/05/15/community-bonding-blog.html">GSoC-19 with Weecology</a></li>
-	<li><a href="https://harshitbansal05.github.io/2019/06/10/first-coding-blog.html">Retriever Scripts repository</a></li>
-	<li><a href="https://harshitbansal05.github.io/2019/06/24/first-coding-blog-2.html">Retriever changes</a></li>
-	<li><a href="https://harshitbansal05.github.io/2019/07/08/second-coding-blog.html">Download scripts only when specifically needed</a></li>
-	<li><a href="https://harshitbansal05.github.io/2019/07/23/second-coding-blog-2.html">Install datasets using the latest version of scripts</a></li>
-	<li><a href="https://harshitbansal05.github.io/2019/08/11/third-coding-blog.html">Julia and R repositories</a></li>
+	<li><a href="https://harshitbansal05.github.io/2019/05/15/community-bonding-blog.html"><u>GSoC-19 with Weecology</u></a></li>
+	<li><a href="https://harshitbansal05.github.io/2019/06/10/first-coding-blog.html"><u>Retriever Scripts repository</u></a></li>
+	<li><a href="https://harshitbansal05.github.io/2019/06/24/first-coding-blog-2.html"><u>Retriever changes</u></a></li>
+	<li><a href="https://harshitbansal05.github.io/2019/07/08/second-coding-blog.html"><u>Download scripts only when specifically needed</u></a></li>
+	<li><a href="https://harshitbansal05.github.io/2019/07/23/second-coding-blog-2.html"><u>Install datasets using the latest version of scripts</u></a></li>
+	<li><a href="https://harshitbansal05.github.io/2019/08/11/third-coding-blog.html"><u>Julia and R repositories</u></a></li>
 </ul>
+
+<p>In the end, I would like to thank my mentors Ethan White and Andrew Zhang for giving me this opportunity to work with them. Also, a special thanks to Henry Senyondo for his constant support and guidance. You were always there to help me when I was stuck somewhere and helped a lot in making crucial design decisions for the project. Would surely continue contributing to the project in future. Thanks to all.</p>
